@@ -6,7 +6,7 @@ export default function Navbar() {
 
                 <div className="flex-1 flex items-center justify-between border-b border-black-800 border-opacity-40">
 
-                    <a href="index.html">
+                    <a href="">
                         <img src={logo} alt="logo" />
                     </a>
 
