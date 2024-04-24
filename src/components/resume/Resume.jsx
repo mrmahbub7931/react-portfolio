@@ -1,6 +1,8 @@
-import React from 'react'
+import { useRef, useState } from "react";
+
 
 export default function Resume() {
+    const [activeTab, setActiveTab] = useState(1);
     return (
         <section className="featured-properties py-[80px] lg:py-[100px]">
             <div className="container">
@@ -19,8 +21,8 @@ export default function Resume() {
 
                         </div>
                         <div className="tabs flex flex-wrap lg:flex-col gap-2 my-8 lg:my-0">
-                            <button data-tab="about_me_tab"
-                                className="tab-btn justify-between items-center inline-flex group active">
+                            <button data-tab="about_me_tab" onClick={() => setActiveTab(1)}
+                                className={`tab-btn justify-between items-center inline-flex group ${activeTab == 1 && 'active'}`}>
                                 About me
                                 <span className="inline-block ml-3 group-hover:animate-arrow-move-up">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -33,7 +35,7 @@ export default function Resume() {
                                 </span>
                             </button>
                             <button data-tab="experience_tab"
-                                className="tab-btn justify-between items-center inline-flex group">
+                                className={`tab-btn justify-between items-center inline-flex group ${activeTab == 2 && 'active'}`} onClick={() => setActiveTab(2)}>
                                 Experience
                                 <span className="inline-block ml-3 group-hover:animate-arrow-move-up">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -46,7 +48,7 @@ export default function Resume() {
                                 </span>
                             </button>
                             <button data-tab="education_tab"
-                                className="tab-btn justify-between items-center inline-flex group">
+                                className={`tab-btn justify-between items-center inline-flex group ${activeTab == 3 && 'active'}`} onClick={() => setActiveTab(3)}>
                                 Education
                                 <span className="inline-block ml-3 group-hover:animate-arrow-move-up">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -59,7 +61,7 @@ export default function Resume() {
                                 </span>
                             </button>
                             <button data-tab="skills_tab"
-                                className="tab-btn justify-between items-center inline-flex group">
+                                className={`tab-btn justify-between items-center inline-flex group ${activeTab == 4 && 'active'}`} onClick={() => setActiveTab(4)}>
                                 Skills
                                 <span className="inline-block ml-3 group-hover:animate-arrow-move-up">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -72,7 +74,7 @@ export default function Resume() {
                                 </span>
                             </button>
                             <button data-tab="awards_tab"
-                                className="tab-btn justify-between items-center inline-flex group">
+                                className={`tab-btn justify-between items-center inline-flex group ${activeTab == 5 && 'active'}`} onClick={() => setActiveTab(5)}>
                                 Awards
                                 <span className="inline-block ml-3 group-hover:animate-arrow-move-up">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -88,7 +90,7 @@ export default function Resume() {
                     </div>
 
                     <div className="col-span-12 lg:col-span-7 2xl:col-span-8" data-aos="fade-up" data-aos-delay="400">
-                        <div id="about_me_tab" className="tab-content active relative">
+                        <div id="about_me_tab" className={`tab-content ${activeTab == 1 && 'active'} relative`}>
                             <div className="grid grid-cols-1">
                                 <h4 className="text-black-800 text-2xl lg:text-[32px] font-bold font-Syne mb-6">Based in
                                     German</h4>
@@ -159,9 +161,7 @@ export default function Resume() {
 
                             </div>
                         </div>
-
-
-                        <div id="experience_tab" className="tab-content relative">
+                        <div id="experience_tab" className={`tab-content ${activeTab == 2 && 'active'} relative`}>
                             <h4 className="text-black-800 text-2xl lg:text-[32px] font-bold font-Syne mb-6">Experience</h4>
 
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-5">
@@ -231,8 +231,7 @@ export default function Resume() {
 
                             </div>
                         </div>
-
-                        <div id="education_tab" className="tab-content">
+                        <div id="education_tab" className={`tab-content ${activeTab == 3 && 'active'}`}>
                             <h4 className="text-black-800 text-2xl lg:text-[32px] font-bold font-Syne mb-6">Education</h4>
 
                             <div className="grid grid-cols-1 gap-6">
@@ -289,7 +288,7 @@ export default function Resume() {
 
                             </div>
                         </div>
-                        <div id="skills_tab" className="tab-content">
+                        <div id="skills_tab" className={`tab-content ${activeTab == 4 && 'active'}`}>
                             <h4 className="text-black-800 text-2xl lg:text-[32px] font-bold font-Syne mb-6">Skills</h4>
 
                             <div
@@ -358,7 +357,7 @@ export default function Resume() {
 
                             </div>
                         </div>
-                        <div id="awards_tab" className="tab-content">
+                        <div id="awards_tab" className={`tab-content ${activeTab == 5 && 'active'}`}>
                             <h4 className="text-black-800 text-2xl lg:text-[32px] font-bold font-Syne mb-6">Awards</h4>
 
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -449,6 +448,6 @@ export default function Resume() {
                     </div>
                 </div>
             </div>
-        </section>
+        </section >
     )
 }

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import profile from '../../assets/images/hero/hero.png'
 export default function Banner() {
     return (
@@ -47,7 +48,7 @@ export default function Banner() {
 
                                 {/* <!-- Link Start --> */}
                                 <span>
-                                    <a href="projects.html" className="flex items-center flex-wrap btn-primary-outline group">
+                                    <Link to="/projects" className="flex items-center flex-wrap btn-primary-outline group">
                                         My Work
                                         <span className="inline-block ml-3 group-hover:animate-arrow-move-up">
                                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -57,7 +58,7 @@ export default function Banner() {
                                                     strokeLinecap="round" strokeLinejoin="round" />
                                             </svg>
                                         </span>
-                                    </a>
+                                    </Link>
                                 </span>
                                 {/* <!-- Link End --> */}
                             </div>

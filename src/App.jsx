@@ -1,22 +1,29 @@
-import Navbar from "./components/Navbar/Navbar";
-import Banner from "./components/banner/Banner";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import './App.css'
-import Skills from "./components/skills/Skills";
-import About from "./components/about/About";
-import Resume from "./components/resume/Resume";
-import Work from "./components/work/Work";
-import Layout from "./Layout";
+
+import Layout from "./pages/Layout";
+import Home from "./pages/Home";
+import Projects from "./pages/Projects";
 export default function App() {
   return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="projects" element={<Projects />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
 
-    <Layout>
-      <Navbar />
-      <Banner />
-      <Skills />
-      <About />
-      <Resume />
-      <Work />
-    </Layout>
+    // <Layout>
+    //   <Navbar />
+    //   <Banner />
+    //   <Skills />
+    //   <About />
+    //   <Resume />
+    //   <Work />
+    // </Layout>
   );
 }
 

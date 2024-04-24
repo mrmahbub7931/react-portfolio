@@ -1,6 +1,7 @@
 import React from 'react'
 import Project1 from '../../assets/images/projects/project1.png'
 import Project2 from '../../assets/images/projects/project2.png'
+import { Link } from 'react-router-dom'
 
 export default function Work() {
     return (
@@ -89,7 +90,7 @@ export default function Work() {
 
                 <div className="col-span-12 mt-12" data-aos="fade-up">
                     <div className="flex group">
-                        <a href="projects.html" className="flex items-center justify-center flex-wrap btn-primary grow">
+                        <Link to="/projects" className="flex items-center justify-center flex-wrap btn-primary grow">
                             View All Project
                             <span className="inline-block ml-3 group-hover:animate-arrow-move-up">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -100,7 +101,7 @@ export default function Work() {
                                         strokeLinecap="round" strokeLinejoin="round"></path>
                                 </svg>
                             </span>
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>
